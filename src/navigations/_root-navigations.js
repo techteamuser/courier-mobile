@@ -12,7 +12,7 @@ export default function Navigations() {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
-        initialRouteName="HomeScreen">
+        initialRouteName="DefaultScreen">
         <Stack.Screen name="DefaultScreen" component={DefaultScreen} />
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
         {/* <Stack.Screen name="OnboardingStack" component={OnboardingStack} />
