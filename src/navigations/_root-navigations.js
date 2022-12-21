@@ -3,7 +3,7 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import {DefaultScreen} from '../screens';
+import {DefaultScreen, HomeScreen} from '../screens';
 
 const Stack = createStackNavigator();
 
@@ -12,8 +12,9 @@ export default function Navigations() {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
-        initialRouteName="DefaultScreen">
+        initialRouteName="HomeScreen">
         <Stack.Screen name="DefaultScreen" component={DefaultScreen} />
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
         {/* <Stack.Screen name="OnboardingStack" component={OnboardingStack} />
         <Stack.Screen name="AppTabs" component={AppTabs} />
         <Stack.Screen name="MemberAreaTabs" component={MemberAreaTabs} />

@@ -1,10 +1,12 @@
-import {View, Text} from 'react-native';
 import React from 'react';
+import {View, Text} from 'react-native';
+import {useTailwind} from 'tailwind-rn';
 
 export default function HomeScreen() {
+  const tw = useTailwind();
   return (
-    <View>
-      <Text>HomeScreen</Text>
+    <View style={tw('flex-1')}>
+      <Text style={tw('ml-2')}>HomeScreen</Text>
     </View>
   );
 }

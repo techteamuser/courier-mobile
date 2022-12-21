@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {SafeAreaView, StatusBar} from 'react-native';
+import {useTailwind} from 'tailwind-rn';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import ErrorBoundary from 'react-native-error-boundary';
 import {setLogger} from 'react-query';
@@ -12,6 +13,8 @@ import {useApiStore} from '../../store';
 // import DevMode from '../commons/dev-mode';
 
 export default function BaseLayout({children}) {
+  const tw = useTailwind();
+
   const setErrorServer = useApiStore(state => state.setErrorServer);
   const setIsNetworkError = useApiStore(state => state.setIsNetworkError);
 
@@ -47,7 +50,7 @@ export default function BaseLayout({children}) {
   return (
     <>
       <StatusBar />
-      <SafeAreaView style={{flex: 1}}>
+      <SafeAreaView style={tw('flex-1')}>
         <SafeAreaProvider>
           {/* <ThemeProvider theme={theme}> */}
           <ErrorBoundary FallbackComponent={ErrorScreen}>
